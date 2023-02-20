@@ -10,6 +10,8 @@ export function Accordeon(props: any) {
   );
 }
 
+console.log("Hi")
+
 export function AccordeonTitles(props: any) {
   return (
     <div className="AccordeonTitles">
