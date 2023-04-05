@@ -1,18 +1,25 @@
 import React from "react";
 
-export function Accordeon(props: any) {
-  console.log("Accordeon rendered");
-  return (
+type AccordionPropsType = {
+  title: string,
+  collapsed: boolean
+}
+
+export function Accordeon(props: AccordionPropsType) {
+  
+    return (
     <div className="Accordeon">
       <AccordeonTitles title={props.title} />
-      <AccordeonBody />
+      {props.collapsed === true ? <AccordeonBody /> : null }
     </div>
   );
 }
 
-console.log("Hi")
+type AccordeonTitlesPropsType = {
+  title: string
+}
 
-export function AccordeonTitles(props: any) {
+export function AccordeonTitles(props: AccordeonTitlesPropsType) {
   return (
     <div className="AccordeonTitles">
       <h3>{props.title}</h3>
